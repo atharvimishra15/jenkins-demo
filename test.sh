@@ -1,2 +1,11 @@
-#!/bin/sh
-["$(sh app.sh)" = "hello git from jenkins"]
+
+#!/bin/bash
+
+output=$(sh app.sh)
+
+if [ "$output" = "hello git from jenkins" ]; then
+    echo "Test Passed!"
+else
+    echo "Test Failed!"
+    exit 1
+fi
